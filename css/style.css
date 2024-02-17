@@ -1,0 +1,269 @@
+:root {
+  --primary: #b6895b;
+  --bg: #010101;
+}
+
+body {
+  background-color: var(--bg);
+  color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #513c28;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+  transition: 0.2s linear;
+}
+
+.navbar-extra {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+  transition: 0.2s linear;
+}
+
+.navbar-extra a:hover {
+  color: var(--primary);
+  transition: 0.2s linear;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 50%),
+    url("../img/header-bg-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* position: relative; */
+}
+
+/* .hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 50%);
+} */
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 5rem;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  line-height: 5rem;
+}
+
+.hero .content h1 span {
+  color: var(--primary);
+}
+
+.hero .content p {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  line-height: 1.6rem;
+  font-weight: 200;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero .content .cta {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  transition: 0.2s ease-in-out;
+}
+
+.hero .content .cta:hover {
+  background-color: #8d6946;
+  transition: 0.2s ease-in-out;
+}
+
+/* ABOUT SECTION */
+.about {
+  padding: 7rem 7% 1.4rem;
+}
+
+.about h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span {
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.8rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 200;
+  line-height: 1.5rem;
+}
+
+/* MEDIA QUERIES */
+
+/* LAPTOP */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  /* NAVBAR */
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5rem;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #fff;
+    /* display: block;
+    margin: 1.5rem;
+    padding: 0.5; */
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a:first-child {
+    padding-top: 5rem;
+  }
+
+  /* TENTANG KAMI */
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img{
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content{
+    padding: 1rem 0;
+  }
+
+  .about .row .content h3{
+    font-size: 2rem;
+  }
+
+  .about .row .content p{
+    font-size: 1.6rem;
+  }
+
+  /* .about .row .content h3{
+    margin-top: 10px;
+    margin-left: -11px;
+  }
+
+  .about .row .content p{
+    margin-left: -11px;
+  } */
+}
+
+/* MOBILE PHONE */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
